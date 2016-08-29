@@ -3,3 +3,5 @@
 ################################################################################
 
 /src/Delphi/Android/Debug
+/src/Delphi/Win32/Debug
+/src/RaspberryPi/node_modules

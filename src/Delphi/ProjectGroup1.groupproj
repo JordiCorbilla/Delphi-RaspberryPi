@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B6D41BCE-A30B-49D1-B34D-D7C2995E8410}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RestClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RPIMonitor.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RestClient">
+        <MSBuild Projects="RestClient.dproj"/>
+    </Target>
+    <Target Name="RestClient:Clean">
+        <MSBuild Projects="RestClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestClient:Make">
+        <MSBuild Projects="RestClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RPIMonitor">
+        <MSBuild Projects="RPIMonitor.dproj"/>
+    </Target>
+    <Target Name="RPIMonitor:Clean">
+        <MSBuild Projects="RPIMonitor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RPIMonitor:Make">
+        <MSBuild Projects="RPIMonitor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RestClient;RPIMonitor"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RestClient:Clean;RPIMonitor:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RestClient:Make;RPIMonitor:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

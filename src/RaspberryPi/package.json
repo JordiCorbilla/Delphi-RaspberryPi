@@ -1,0 +1,16 @@
+{
+  "author": "Jordi Corbilla",
+  "dependencies": {
+    "express": "^4.13.4",
+    "ping": "^0.2.0"
+  },
+  "description": "A simple webAPI in Node.js with Express by Jordi Corbilla",
+  "license": "MIT",
+  "main": "webapi.js",
+  "name": "site",
+  "private": true,
+  "scripts": {
+    "start": "node webapi.js"
+  },
+  "version": "1.0.0"
+}

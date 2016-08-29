@@ -1,0 +1,190 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object RoundRect4: TRoundRect
+    Fill.Color = claCrimson
+    Position.X = 240.000000000000000000
+    Position.Y = 288.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+  end
+  object RoundRect3: TRoundRect
+    Fill.Color = claCrimson
+    Position.X = 240.000000000000000000
+    Position.Y = 232.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+  end
+  object RoundRect2: TRoundRect
+    Fill.Color = claCrimson
+    Position.X = 240.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+  end
+  object Button1: TButton
+    Position.X = 184.000000000000000000
+    Position.Y = 72.000000000000000000
+    TabOrder = 0
+    Text = 'Button1'
+  end
+  object Label1: TLabel
+    Position.X = 88.000000000000000000
+    Position.Y = 136.000000000000000000
+    Text = 'Label1'
+  end
+  object AniIndicator1: TAniIndicator
+    Position.X = 264.000000000000000000
+    Position.Y = 112.000000000000000000
+    object FloatAnimation2: TFloatAnimation
+      Enabled = True
+      Duration = 0.200000002980232200
+      Loop = True
+      PropertyName = 'RotationAngle'
+      StartValue = 0.000000000000000000
+      StopValue = 0.000000000000000000
+    end
+  end
+  object RoundRect1: TRoundRect
+    Fill.Color = claCrimson
+    Position.X = 184.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label3: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 40.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    Text = 'PiController'
+  end
+  object Label4: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 32.000000000000000000
+    Position.Y = 184.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    Text = 'PiController'
+  end
+  object Label5: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 32.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    Text = 'PiController'
+  end
+  object Label6: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 32.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    Text = 'PiController'
+  end
+  object Label7: TLabel
+    StyledSettings = [Family]
+    Position.X = 248.000000000000000000
+    Position.Y = 186.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'calendarlabelstyle'
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.Style = [fsBold]
+    TextSettings.FontColor = claWhite
+    TextSettings.HorzAlign = Center
+    Text = 'Active'
+  end
+  object Label8: TLabel
+    StyledSettings = [Family]
+    Position.X = 161.000000000000000000
+    Position.Y = 290.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'calendarlabelstyle'
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.Style = [fsBold]
+    TextSettings.FontColor = claWhite
+    TextSettings.HorzAlign = Center
+    Text = 'Active'
+  end
+  object Label9: TLabel
+    StyledSettings = [Family]
+    Position.X = 273.000000000000000000
+    Position.Y = 378.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'calendarlabelstyle'
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.Style = [fsBold]
+    TextSettings.FontColor = claWhite
+    TextSettings.HorzAlign = Center
+    Text = 'Active'
+  end
+  object Label2: TLabel
+    StyledSettings = [Family, Style]
+    Position.X = 32.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.FontColor = claWhite
+    Text = 'PiController'
+  end
+  object FloatAnimation1: TFloatAnimation
+    Duration = 0.200000002980232200
+    StartValue = 0.000000000000000000
+    StopValue = 0.000000000000000000
+  end
+  object RESTClient1: TRESTClient
+    Params = <>
+    HandleRedirects = True
+    Left = 344
+    Top = 64
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 496
+    Top = 80
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 424
+    Top = 104
+  end
+  object StyleBook1: TStyleBook
+    Styles = <>
+    Left = 320
+    Top = 88
+  end
+end
