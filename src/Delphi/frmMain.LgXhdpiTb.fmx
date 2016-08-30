@@ -2,37 +2,4 @@ inherited Form2_LgXhdpiTb: TForm2_LgXhdpiTb
   ClientHeight = 829
   ClientWidth = 480
   DesignerMasterStyle = 3
-  inherited Label2: TLabel [5]
-  end
-  inherited AniIndicator1: TAniIndicator [6]
-  end
-  inherited RoundRect1: TRoundRect [7]
-  end
-  inherited Label3: TLabel [8]
-  end
-  inherited Label4: TLabel [9]
-  end
-  inherited Label5: TLabel [10]
-  end
-  inherited Label6: TLabel [11]
-  end
-  inherited Label7: TLabel [12]
-  end
-  inherited Label8: TLabel [13]
-  end
-  inherited Label9: TLabel [14]
-  end
-  inherited StyleBook1: TStyleBook [15]
-    Styles = <
-      item
-      end>
-  end
-  inherited FloatAnimation1: TFloatAnimation [16]
-  end
-  inherited RESTClient1: TRESTClient [17]
-  end
-  inherited RESTRequest1: TRESTRequest [18]
-  end
-  inherited RESTResponse1: TRESTResponse [19]
-  end
 end

@@ -3,9 +3,7 @@ program RPIMonitor;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  frmMain in 'frmMain.pas' {Form2},
-  lib.nodes in 'lib.nodes.pas',
-  lib.animation in 'lib.animation.pas';
+  frmMain in 'frmMain.pas' {Form2};
 
 {$R *.res}
 

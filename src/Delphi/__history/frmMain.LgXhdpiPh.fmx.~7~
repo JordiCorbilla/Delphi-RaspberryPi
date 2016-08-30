@@ -18,7 +18,7 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Position.Y = 184.000000000000000000
   end
   inherited Button1: TButton
-    Size.Width = 345.000000000000000000
+    Size.Width = 337.000000000000000000
     OnClick = Button1Click
   end
   inherited Label1: TLabel
@@ -33,14 +33,13 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Text = 'PiController'
   end
   inherited AniIndicator1: TAniIndicator
-    Position.X = 306.000000000000000000
+    Position.X = 298.000000000000000000
     Position.Y = 8.000000000000000000
     Size.Width = 47.000000000000000000
     Size.Height = 41.000000000000000000
     Size.PlatformDefault = False
   end
   inherited RoundRect1: TRoundRect
-    Fill.Color = claCoral
     Locked = True
     Position.X = 197.000000000000000000
     Position.Y = 128.000000000000000000

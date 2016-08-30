@@ -40,7 +40,6 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Size.PlatformDefault = False
   end
   inherited RoundRect1: TRoundRect
-    Fill.Color = claCoral
     Locked = True
     Position.X = 197.000000000000000000
     Position.Y = 128.000000000000000000

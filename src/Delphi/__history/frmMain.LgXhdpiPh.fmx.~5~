@@ -18,7 +18,6 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Position.Y = 184.000000000000000000
   end
   inherited Button1: TButton
-    Size.Width = 345.000000000000000000
     OnClick = Button1Click
   end
   inherited Label1: TLabel
@@ -40,7 +39,6 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Size.PlatformDefault = False
   end
   inherited RoundRect1: TRoundRect
-    Fill.Color = claCoral
     Locked = True
     Position.X = 197.000000000000000000
     Position.Y = 128.000000000000000000
@@ -101,6 +99,9 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Text = 'Offline'
   end
   inherited RESTClient1: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'UTF-8, *;q=0.8'
+    BaseURL = 'http://pi02:3000'
     Left = 52
     Top = 400
   end

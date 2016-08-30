@@ -38,13 +38,10 @@ object Form2: TForm2
     Stroke.Color = claWhite
   end
   object Button1: TButton
-    Position.X = 8.000000000000000000
-    Position.Y = 8.000000000000000000
-    Size.Width = 625.000000000000000000
-    Size.Height = 44.000000000000000000
-    Size.PlatformDefault = False
+    Position.X = 184.000000000000000000
+    Position.Y = 72.000000000000000000
     TabOrder = 0
-    Text = 'Scan'
+    Text = 'Button1'
     OnClick = Button1Click
   end
   object Label1: TLabel
@@ -171,9 +168,6 @@ object Form2: TForm2
     StopValue = 0.000000000000000000
   end
   object RESTClient1: TRESTClient
-    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
-    AcceptCharset = 'UTF-8, *;q=0.8'
-    BaseURL = 'http://pi02:3000'
     Params = <>
     HandleRedirects = True
     Left = 40
@@ -184,11 +178,11 @@ object Form2: TForm2
     Params = <>
     Response = RESTResponse1
     SynchronizedEvents = False
-    Left = 208
-    Top = 432
+    Left = 496
+    Top = 80
   end
   object RESTResponse1: TRESTResponse
-    Left = 120
-    Top = 432
+    Left = 424
+    Top = 104
   end
 end

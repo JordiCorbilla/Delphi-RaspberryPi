@@ -82,6 +82,7 @@ uses
 
 procedure TForm2.Button1Click(Sender: TObject);
 var
+  jValue:TJSONValue;
   nodeThread : TNodeThread;
 begin
   nodeThread := TNodeThread.Create(RESTRequest1, RESTResponse1, listNodes, AniIndicator1);
@@ -97,9 +98,13 @@ begin
   listNodes.Add(TNode.Create('status/pi02', 4286578432, 4292613180, Label8, RoundRect3));
   listNodes.Add(TNode.Create('status/pi03', 4286578432, 4292613180, Label9, RoundRect4));
   RoundRect1.Fill.Color := 4292613180;
+  RoundRect1.Fill.Kind := TBrushKind.Solid;
   RoundRect2.Fill.Color := 4292613180;
+  RoundRect2.Fill.Kind := TBrushKind.Solid;
   RoundRect3.Fill.Color := 4292613180;
+  RoundRect3.Fill.Kind := TBrushKind.Solid;
   RoundRect4.Fill.Color := 4292613180;
+  RoundRect4.Fill.Kind := TBrushKind.Solid;
 end;
 
 procedure TForm2.FormDestroy(Sender: TObject);
