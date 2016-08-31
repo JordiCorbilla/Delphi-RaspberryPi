@@ -34,7 +34,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, IPPeerClient,
   REST.Client, Data.Bind.Components, Data.Bind.ObjectScope,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, FMX.Ani,
-  Generics.collections, lib.nodes;
+  Generics.collections, lib.nodes, FMX.Layouts, FMX.ExtCtrls;
 
 type
   TForm2 = class(TForm)
@@ -58,6 +58,8 @@ type
     RoundRect4: TRoundRect;
     FloatAnimation1: TFloatAnimation;
     FloatAnimation2: TFloatAnimation;
+    ImageViewer1: TImageViewer;
+    BitmapAnimation1: TBitmapAnimation;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);

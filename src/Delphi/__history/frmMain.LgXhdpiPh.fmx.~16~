@@ -1,7 +1,6 @@
 inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
   ClientHeight = 695
   ClientWidth = 450
-  Fill.Kind = Solid
   DesignerMasterStyle = 3
   inherited RoundRect4: TRoundRect
     Position.X = 197.000000000000000000
@@ -147,6 +146,7 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
       801F92FF7744C85FD7BA82CE7DFEC98A0D52ADF44F51935D4171CB8B64C1B36A
       34FC2721FB3464EDD7C82F33576A18A21E7E965FA55249B9DF479FE37F0EE01F
       00877CA71C5D695C0000000049454E44AE426082}
+    ShowBackground = True
     Viewport.Width = 50.000000000000000000
     Viewport.Height = 50.000000000000000000
   end

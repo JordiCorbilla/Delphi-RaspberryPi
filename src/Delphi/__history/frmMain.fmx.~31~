@@ -4,7 +4,6 @@ object Form2: TForm2
   Caption = 'Form2'
   ClientHeight = 447
   ClientWidth = 400
-  Fill.Kind = Solid
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -190,7 +189,7 @@ object Form2: TForm2
   object ImageViewer1: TImageViewer
     Position.X = 184.000000000000000000
     Position.Y = 64.000000000000000000
-    TabOrder = 4
+    TabOrder = 5
     Bitmap.PNG = {
       89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
       98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
