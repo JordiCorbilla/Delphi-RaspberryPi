@@ -123,7 +123,7 @@ begin
           procedure ()
           begin
               node.labelNode.Text := 'TimedOut';
-              node.RoundRect.Fill.Color := 4294934352;
+              node.RoundRect.Fill.Color := node.ColorOff;
           end
         );
       end;

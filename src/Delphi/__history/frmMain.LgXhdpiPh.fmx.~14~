@@ -50,22 +50,16 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Text = 'Status RPI Grid:'
   end
   inherited Label7: TLabel
-    Position.X = 211.000000000000000000
+    Position.X = 216.000000000000000000
     Position.Y = 188.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 45.000000000000000000
   end
   inherited Label8: TLabel
-    Position.X = 211.000000000000000000
+    Position.X = 214.000000000000000000
     Position.Y = 243.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 45.000000000000000000
   end
   inherited Label9: TLabel
-    Position.X = 211.000000000000000000
+    Position.X = 216.000000000000000000
     Position.Y = 299.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 45.000000000000000000
   end
   inherited Label2: TLabel
     Position.X = 211.000000000000000000
