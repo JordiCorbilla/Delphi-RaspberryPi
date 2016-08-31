@@ -48,7 +48,7 @@ type
 implementation
 
 uses
-  System.JSON, System.SysUtils;
+  System.JSON, System.SysUtils, System.Net.HttpClient;
 
 constructor TNodeThread.Create(request: TRESTRequest; response: TRESTResponse; nodes : TList<TNode>; AniIndicator: TAniIndicator);
 begin
@@ -85,7 +85,7 @@ begin
     FRequest.Resource := node.Action;
     try
       FRequest.Execute;
-      jValue:=FResponse.JSONValue;
+      jValue := FResponse.JSONValue;
       Synchronize(
         procedure ()
         begin
@@ -102,13 +102,16 @@ begin
         end
       );
     except
-      Synchronize(
-        procedure ()
-        begin
-            node.labelNode.Text := 'Failed';
-            node.RoundRect.Fill.Color := 4294934352;
-        end
-      );
+      on e : Exception do
+      begin
+        Synchronize(
+          procedure ()
+          begin
+              node.labelNode.Text := 'TimedOut';
+              node.RoundRect.Fill.Color := 4294934352;
+          end
+        );
+      end;
     end;
   end;
 

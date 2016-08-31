@@ -64,6 +64,10 @@ procedure TNodeThread.Execute;
 var
   node : TNode;
   jValue: TJSONValue;
+  LJsonArr   : TJSONArray;
+  LJsonValue : TJSONValue;
+  LItem : TJSONValue;
+  status : string;
 begin
   Synchronize(
     procedure ()
@@ -86,28 +90,39 @@ begin
     try
       FRequest.Execute;
       jValue := FResponse.JSONValue;
-      Synchronize(
-        procedure ()
+      LJsonArr := TJSONObject.ParseJSONValue(TEncoding.ASCII.GetBytes(jValue.ToString),0) as TJSONArray;
+      for LJsonValue in LJsonArr do
+      begin
+        for LItem in TJSONArray(LJsonValue) do
         begin
-          if jValue.ToString.Contains('alive') then
+          if (TJSONPair(LItem).JsonString.Value = 'host') then
           begin
-            node.labelNode.Text := 'Alive';
-            node.RoundRect.Fill.Color := node.ColorOn;
-          end
-          else
-          begin
-            node.labelNode.Text := 'Dead';
-            node.RoundRect.Fill.Color := node.ColorOff;
+            status := TJSONPair(LItem).JsonValue.Value;
+            Synchronize(
+              procedure ()
+              begin
+                if status.Equals('alive') then
+                begin
+                  node.labelNode.Text := 'Alive';
+                  node.RoundRect.Fill.Color := node.ColorOn;
+                end
+                else
+                begin
+                  node.labelNode.Text := 'Dead';
+                  node.RoundRect.Fill.Color := node.ColorOff;
+                end;
+              end
+            );
           end;
-        end
-      );
+        end;
+      end;
     except
       on e : Exception do
       begin
         Synchronize(
           procedure ()
           begin
-              node.labelNode.Text := 'Failed';
+              node.labelNode.Text := 'TimedOut';
               node.RoundRect.Fill.Color := 4294934352;
           end
         );
