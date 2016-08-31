@@ -122,7 +122,7 @@ begin
         Synchronize(
           procedure ()
           begin
-              node.labelNode.Text := 'TimedOut';
+              node.labelNode.Text := 'Timeout';
               node.RoundRect.Fill.Color := node.ColorOff;
           end
         );
