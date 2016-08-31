@@ -30,7 +30,7 @@ unit lib.animation;
 interface
 
 uses
-  System.Classes, REST.Client, lib.nodes, Generics.collections;
+  System.Classes, REST.Client, lib.nodes, Generics.collections, FMX.StdCtrls, FMX.Objects;
 
 type
   TNodeThread = class(TThread)
@@ -38,9 +38,9 @@ type
     FListNodes : TList<TNode>;
     FRequest: TRESTRequest;
     FResponse: TRESTResponse;
+    FAniIndicator: TAniIndicator;
   public
-
-    constructor Create(request: TRESTRequest; response: TRESTResponse; nodes : TList<TNode>); reintroduce;
+    constructor Create(request: TRESTRequest; response: TRESTResponse; nodes : TList<TNode>; AniIndicator: TAniIndicator); reintroduce;
   protected
     procedure Execute; override;
   end;
@@ -50,13 +50,14 @@ implementation
 uses
   System.JSON, System.SysUtils;
 
-constructor TNodeThread.Create(request: TRESTRequest; response: TRESTResponse; nodes : TList<TNode>);
+constructor TNodeThread.Create(request: TRESTRequest; response: TRESTResponse; nodes : TList<TNode>; AniIndicator: TAniIndicator);
 begin
   inherited Create(True);
   FreeOnTerminate := True;
   FListNodes := nodes;
   FRequest := request;
   FResponse := response;
+  FAniIndicator := AniIndicator;
 end;
 
 procedure TNodeThread.Execute;
@@ -64,34 +65,60 @@ var
   node : TNode;
   jValue: TJSONValue;
 begin
+  Synchronize(
+    procedure ()
+    begin
+        FAniIndicator.Visible := true;
+        FAniIndicator.Enabled := true;
+    end
+  );
+
   for node in FListNodes do
   begin
+    Synchronize(
+      procedure ()
+      begin
+          node.labelNode.Text := 'Checking';
+          node.RoundRect.Fill.Color := 4294934352;
+      end
+    );
     FRequest.Resource := node.Action;
-    FRequest.Execute;
-    jValue:=FResponse.JSONValue;
-    if jValue.ToString.Contains('alive') then
-    begin
-      Label2.Text := 'Alive';
-      RoundRect1.Fill.Color := node.ColorOn;
-    end
-    else
-    begin
-      Label2.Text := 'Dead';
-      RoundRect1.Fill.Color := node.ColorOff;
+    try
+      FRequest.Execute;
+    except
+      Synchronize(
+        procedure ()
+        begin
+            node.labelNode.Text := 'Checking';
+            node.RoundRect.Fill.Color := 4294934352;
+        end
+      );
     end;
+    jValue:=FResponse.JSONValue;
+    Synchronize(
+      procedure ()
+      begin
+        if jValue.ToString.Contains('alive') then
+        begin
+          node.labelNode.Text := 'Alive';
+          node.RoundRect.Fill.Color := node.ColorOn;
+        end
+        else
+        begin
+          node.labelNode.Text := 'Dead';
+          node.RoundRect.Fill.Color := node.ColorOff;
+        end;
+      end
+    );
   end;
-
-
-
 
   Synchronize(
     procedure ()
     begin
-      //update main form
+        FAniIndicator.Visible := false;
+        FAniIndicator.Enabled := false;
     end
   );
-
-  //do processing
 end;
 
 end.

@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 480
-  ClientWidth = 640
+  ClientHeight = 447
+  ClientWidth = 400
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -38,20 +38,32 @@ object Form2: TForm2
     Stroke.Color = claWhite
   end
   object Button1: TButton
-    Position.X = 184.000000000000000000
-    Position.Y = 32.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 377.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 0
-    Text = 'Button1'
+    Text = 'Scan'
     OnClick = Button1Click
   end
   object Label1: TLabel
-    Position.X = 88.000000000000000000
+    StyledSettings = [Family, FontColor]
+    Position.X = 32.000000000000000000
     Position.Y = 136.000000000000000000
-    Text = 'Label1'
+    Size.Width = 145.000000000000000000
+    Size.Height = 23.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.Style = [fsBold]
+    Text = 'PiController'
   end
   object AniIndicator1: TAniIndicator
-    Position.X = 264.000000000000000000
-    Position.Y = 112.000000000000000000
+    Position.X = 336.000000000000000000
+    Position.Y = 13.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
     object FloatAnimation2: TFloatAnimation
       Enabled = True
       Duration = 0.200000002980232200
@@ -63,56 +75,60 @@ object Form2: TForm2
   end
   object RoundRect1: TRoundRect
     Fill.Color = claCrimson
-    Position.X = 184.000000000000000000
-    Position.Y = 160.000000000000000000
+    Position.X = 240.000000000000000000
+    Position.Y = 111.000000000000000000
     Size.Width = 137.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
   end
   object Label3: TLabel
-    StyledSettings = [Family, Style, FontColor]
-    Position.X = 40.000000000000000000
-    Position.Y = 136.000000000000000000
-    Size.Width = 145.000000000000000000
-    Size.Height = 49.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Font.Size = 22.000000000000000000
-    Text = 'PiController'
-  end
-  object Label4: TLabel
-    StyledSettings = [Family, Style, FontColor]
-    Position.X = 32.000000000000000000
-    Position.Y = 184.000000000000000000
-    Size.Width = 145.000000000000000000
-    Size.Height = 49.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Font.Size = 22.000000000000000000
-    Text = 'PiController'
-  end
-  object Label5: TLabel
-    StyledSettings = [Family, Style, FontColor]
-    Position.X = 32.000000000000000000
-    Position.Y = 256.000000000000000000
-    Size.Width = 145.000000000000000000
-    Size.Height = 49.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Font.Size = 22.000000000000000000
-    Text = 'PiController'
-  end
-  object Label6: TLabel
-    StyledSettings = [Family, Style, FontColor]
+    StyledSettings = [Family, FontColor]
     Position.X = 32.000000000000000000
     Position.Y = 176.000000000000000000
     Size.Width = 145.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Size = 22.000000000000000000
-    Text = 'PiController'
+    TextSettings.Font.Style = [fsBold]
+    Text = 'Pi01'
+  end
+  object Label4: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 32.000000000000000000
+    Position.Y = 240.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.Style = [fsBold]
+    Text = 'Pi02'
+  end
+  object Label5: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 32.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.Style = [fsBold]
+    Text = 'Pi03'
+  end
+  object Label6: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 16.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 193.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.Style = [fsBold]
+    Text = 'Status RPI Grid'
   end
   object Label7: TLabel
     StyledSettings = [Family]
-    Position.X = 248.000000000000000000
-    Position.Y = 186.000000000000000000
+    Position.X = 260.000000000000000000
+    Position.Y = 177.000000000000000000
     Size.Width = 97.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -125,8 +141,8 @@ object Form2: TForm2
   end
   object Label8: TLabel
     StyledSettings = [Family]
-    Position.X = 161.000000000000000000
-    Position.Y = 290.000000000000000000
+    Position.X = 260.000000000000000000
+    Position.Y = 234.000000000000000000
     Size.Width = 97.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -139,8 +155,8 @@ object Form2: TForm2
   end
   object Label9: TLabel
     StyledSettings = [Family]
-    Position.X = 273.000000000000000000
-    Position.Y = 378.000000000000000000
+    Position.X = 261.000000000000000000
+    Position.Y = 292.000000000000000000
     Size.Width = 97.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
@@ -152,15 +168,18 @@ object Form2: TForm2
     Text = 'Active'
   end
   object Label2: TLabel
-    StyledSettings = [Family, Style]
-    Position.X = 32.000000000000000000
-    Position.Y = 128.000000000000000000
-    Size.Width = 145.000000000000000000
-    Size.Height = 49.000000000000000000
+    AutoSize = True
+    StyledSettings = [Family]
+    Position.X = 272.000000000000000000
+    Position.Y = 125.000000000000000000
+    Size.Width = 72.000000000000000000
+    Size.Height = 30.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.Style = [fsBold]
     TextSettings.FontColor = claWhite
-    Text = 'PiController'
+    TextSettings.WordWrap = False
+    Text = 'Active'
   end
   object FloatAnimation1: TFloatAnimation
     Duration = 0.200000002980232200
@@ -168,10 +187,13 @@ object Form2: TForm2
     StopValue = 0.000000000000000000
   end
   object RESTClient1: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'UTF-8, *;q=0.8'
+    BaseURL = 'http://pi02:3000'
     Params = <>
     HandleRedirects = True
     Left = 40
-    Top = 432
+    Top = 384
   end
   object RESTRequest1: TRESTRequest
     Client = RESTClient1
@@ -179,10 +201,10 @@ object Form2: TForm2
     Response = RESTResponse1
     SynchronizedEvents = False
     Left = 208
-    Top = 432
+    Top = 384
   end
   object RESTResponse1: TRESTResponse
     Left = 120
-    Top = 432
+    Top = 384
   end
 end

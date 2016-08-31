@@ -48,7 +48,7 @@ type
 implementation
 
 uses
-  System.JSON, System.SysUtils;
+  System.JSON, System.SysUtils, System.Net.HttpClient;
 
 constructor TNodeThread.Create(request: TRESTRequest; response: TRESTResponse; nodes : TList<TNode>; AniIndicator: TAniIndicator);
 begin
@@ -83,23 +83,36 @@ begin
       end
     );
     FRequest.Resource := node.Action;
-    FRequest.Execute;
-    jValue:=FResponse.JSONValue;
-    Synchronize(
-      procedure ()
-      begin
-        if jValue.ToString.Contains('alive') then
+    try
+      FRequest.Execute;
+      jValue := FResponse.JSONValue;
+      Synchronize(
+        procedure ()
         begin
-          node.labelNode.Text := 'Alive';
-          node.RoundRect.Fill.Color := node.ColorOn;
+          if jValue.ToString.Contains('alive') then
+          begin
+            node.labelNode.Text := 'Alive';
+            node.RoundRect.Fill.Color := node.ColorOn;
+          end
+          else
+          begin
+            node.labelNode.Text := 'Dead';
+            node.RoundRect.Fill.Color := node.ColorOff;
+          end;
         end
-        else
-        begin
-          node.labelNode.Text := 'Dead';
-          node.RoundRect.Fill.Color := node.ColorOff;
-        end;
-      end
-    );
+      );
+    except
+      on e : Exception do
+      begin
+        Synchronize(
+          procedure ()
+          begin
+              node.labelNode.Text := 'Failed';
+              node.RoundRect.Fill.Color := 4294934352;
+          end
+        );
+      end;
+    end;
   end;
 
   Synchronize(

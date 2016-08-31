@@ -1,7 +1,6 @@
 inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
   ClientHeight = 695
   ClientWidth = 450
-  OnCreate = FormCreate
   DesignerMasterStyle = 3
   inherited RoundRect4: TRoundRect
     Position.X = 197.000000000000000000
@@ -17,32 +16,17 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Position.Y = 184.000000000000000000
   end
   inherited Button1: TButton
-    Position.X = 8.000000000000000000
-    Position.Y = 8.000000000000000000
-    Size.Width = 297.000000000000000000
-    Size.PlatformDefault = False
-    Text = 'Scan'
-    OnClick = Button1Click
+    Size.Width = 345.000000000000000000
   end
   inherited Label1: TLabel
-    StyledSettings = [Family, FontColor]
     Position.X = 28.000000000000000000
     Position.Y = 128.000000000000000000
-    Size.Width = 145.000000000000000000
-    Size.Height = 49.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Font.Size = 22.000000000000000000
-    TextSettings.Font.Style = [fsBold]
-    Text = 'PiController'
   end
   inherited AniIndicator1: TAniIndicator
-    Position.X = 306.000000000000000000
-    Position.Y = 8.000000000000000000
-    Size.Width = 47.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
+    Position.X = 305.000000000000000000
   end
   inherited RoundRect1: TRoundRect
+    Fill.Color = claCoral
     Locked = True
     Position.X = 197.000000000000000000
     Position.Y = 128.000000000000000000
@@ -50,62 +34,46 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Stroke.Color = claWhite
   end
   inherited Label3: TLabel
-    StyledSettings = [Family, FontColor]
     Position.X = 28.000000000000000000
     Position.Y = 184.000000000000000000
-    TextSettings.Font.Style = [fsBold]
-    Text = 'Pi01'
   end
   inherited Label4: TLabel
-    StyledSettings = [Family, FontColor]
     Position.X = 28.000000000000000000
     Position.Y = 248.000000000000000000
-    TextSettings.Font.Style = [fsBold]
-    Text = 'Pi02'
   end
   inherited Label5: TLabel
-    StyledSettings = [Family, FontColor]
     Position.X = 28.000000000000000000
     Position.Y = 312.000000000000000000
-    TextSettings.Font.Style = [fsBold]
-    Text = 'Pi03'
   end
   inherited Label6: TLabel
-    StyledSettings = [Family, FontColor]
     Position.X = 12.000000000000000000
-    Position.Y = 64.000000000000000000
     Size.Width = 273.000000000000000000
-    TextSettings.Font.Style = [fsBold]
     Text = 'Status RPI Grid:'
   end
   inherited Label7: TLabel
-    Position.X = 214.000000000000000000
+    Position.X = 216.000000000000000000
+    Position.Y = 188.000000000000000000
     Text = 'Offline'
   end
   inherited Label8: TLabel
     Position.X = 214.000000000000000000
-    Position.Y = 242.000000000000000000
+    Position.Y = 243.000000000000000000
     Text = 'Offline'
   end
   inherited Label9: TLabel
-    Position.X = 214.000000000000000000
-    Position.Y = 298.000000000000000000
+    Position.X = 216.000000000000000000
+    Position.Y = 300.000000000000000000
     Text = 'Offline'
   end
   inherited Label2: TLabel
-    StyledSettings = [Family]
-    Position.X = 213.000000000000000000
-    Position.Y = 130.000000000000000000
-    Size.Width = 97.000000000000000000
+    Position.X = 211.000000000000000000
+    Position.Y = 133.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 45.000000000000000000
     StyleLookup = 'calendarlabelstyle'
-    TextSettings.Font.Style = [fsBold]
-    TextSettings.HorzAlign = Center
     Text = 'Offline'
   end
   inherited RESTClient1: TRESTClient
-    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
-    AcceptCharset = 'UTF-8, *;q=0.8'
-    BaseURL = 'http://pi02:3000'
     Left = 52
     Top = 400
   end

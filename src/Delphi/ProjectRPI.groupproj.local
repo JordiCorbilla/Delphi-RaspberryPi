@@ -2,8 +2,9 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2016/08/29 19:19:08.000.765,C:\Users\thund\OneDrive\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=C:\Users\thund\Desktop\rest\ProjectGroup1.groupproj</Transaction>
+    <Transaction>2016/08/31 20:34:52.304,C:\Users\thund\Source\Repos\Delphi-RaspberryPi\src\Delphi\ProjectRPI.groupproj=C:\Users\thund\Source\Repos\Delphi-RaspberryPi\src\Delphi\ProjectGroup1.groupproj</Transaction>
   </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="C:\Users\thund\Source\Repos\Delphi-RaspberryPi\src\Delphi\RestClient.dproj"/>
+		<Projects ActiveProject="C:\Users\thund\Source\Repos\Delphi-RaspberryPi\src\Delphi\RPIMonitor.dproj"/>
 	</Default.Personality>
 </BorlandProject>
