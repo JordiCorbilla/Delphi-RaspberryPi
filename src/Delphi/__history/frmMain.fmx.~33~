@@ -865,7 +865,6 @@ object Form2: TForm2
   object RESTRequest1: TRESTRequest
     Client = RESTClient1
     Params = <>
-    Resource = 'status/picontroller'
     Response = RESTResponse1
     SynchronizedEvents = False
     Left = 208

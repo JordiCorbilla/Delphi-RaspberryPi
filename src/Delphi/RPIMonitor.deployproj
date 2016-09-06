@@ -26,6 +26,33 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="ic_launcher\res\mipmap-xxhdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>RPIMonitor\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon144</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="ic_launcher\res\mipmap-xhdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>RPIMonitor\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon96</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="ic_launcher\res\mipmap-hdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>RPIMonitor\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon72</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="Android\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>RPIMonitor\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
@@ -44,10 +71,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="ic_launcher\res\mipmap-hdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RPIMonitor\res\drawable-hdpi\</RemoteDir>
+        <DeployFile Include="ic_launcher\res\mipmap-mdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>RPIMonitor\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon72</DeployClass>
+            <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -90,37 +117,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="ic_launcher\res\mipmap-xxhdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RPIMonitor\res\drawable-xxhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon144</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>RPIMonitor\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="ic_launcher\res\mipmap-xhdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RPIMonitor\res\drawable-xhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon96</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="ic_launcher\res\mipmap-mdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RPIMonitor\res\drawable-mdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>

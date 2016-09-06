@@ -154,6 +154,7 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
     Top = 400
   end
   inherited RESTRequest1: TRESTRequest
+    Resource = 'status/picontroller'
     Left = 156
     Top = 400
   end
