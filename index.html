@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Delphi-raspberrypi by JordiCorbilla</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Delphi-raspberrypi</h1>
+        <p>Simple projects to show interaction between Delphi and Raspberry Pi</p>
+
+        <p class="view"><a href="https://github.com/JordiCorbilla/Delphi-RaspberryPi">View the Project on GitHub <small>JordiCorbilla/Delphi-RaspberryPi</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/JordiCorbilla/Delphi-RaspberryPi/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/JordiCorbilla/Delphi-RaspberryPi/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/JordiCorbilla/Delphi-RaspberryPi">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="delphi-raspberrypi" class="anchor" href="#delphi-raspberrypi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Delphi-RaspberryPi</h1>
+
+<p>Simple projects to show interaction between Delphi and Raspberry Pi</p>
+
+<p><a href="https://github.com/JordiCorbilla/Delphi-RaspberryPi/releases/tag/1.0"><img src="https://img.shields.io/badge/delphi-10.1Berlin-red.svg" alt="Delphi version"></a> <a href="https://github.com/JordiCorbilla/Delphi-RaspberryPi/releases/tag/1.0"><img src="https://img.shields.io/badge/node.js-6.3.1-green.svg" alt="node version"></a></p>
+
+<p><strong>License:</strong> MIT License.</p>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<p>Create webapi folder</p>
+
+<p>Copy content of repository (src/RaspberryPi) into webapi folder</p>
+
+<p>run the following commands:</p>
+
+<pre><code>sudo npm i
+npm run build
+npm start
+</code></pre>
+
+<p><img src="https://github.com/JordiCorbilla/Delphi-RaspberryPi/raw/master/webapi.png" alt="Screenshot"></p>
+
+<h2>
+<a id="web-api-in-action" class="anchor" href="#web-api-in-action" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Web API in action</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> http <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>http<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> express <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>express<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> ping <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>ping<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> app <span class="pl-k">=</span> <span class="pl-en">express</span>();
+<span class="pl-k">var</span> <span class="pl-c1">DEFAULT_PORT</span> <span class="pl-k">=</span> <span class="pl-c1">3000</span>
+
+<span class="pl-c">// configure Express to deliver index.html and any other static pages stored in the home directory</span>
+<span class="pl-smi">app</span>.<span class="pl-en">use</span>(<span class="pl-smi">express</span>.<span class="pl-en">static</span>(<span class="pl-c1">__dirname</span>));
+
+<span class="pl-c">// Express route for incoming requests with method status/xxx where xxx is the machineName</span>
+<span class="pl-smi">app</span>.<span class="pl-c1">get</span>(<span class="pl-s"><span class="pl-pds">'</span>/status/:machinename<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">req</span>, <span class="pl-smi">res</span>) {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>id = <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-smi">req</span>.<span class="pl-smi">params</span>.<span class="pl-smi">machinename</span>);
+    <span class="pl-smi">ping</span>.<span class="pl-smi">sys</span>.<span class="pl-en">probe</span>(<span class="pl-smi">req</span>.<span class="pl-smi">params</span>.<span class="pl-smi">machinename</span>, <span class="pl-k">function</span> (<span class="pl-smi">isAlive</span>) {
+        <span class="pl-k">var</span> msg <span class="pl-k">=</span> isAlive <span class="pl-k">?</span> <span class="pl-s"><span class="pl-pds">'</span>host <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-smi">req</span>.<span class="pl-smi">params</span>.<span class="pl-smi">machinename</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> is alive<span class="pl-pds">'</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>host <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-smi">req</span>.<span class="pl-smi">params</span>.<span class="pl-smi">machinename</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> is dead<span class="pl-pds">'</span></span>;
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(msg);
+        <span class="pl-k">var</span> s <span class="pl-k">=</span> [{host<span class="pl-k">:</span> isAlive <span class="pl-k">?</span> <span class="pl-s"><span class="pl-pds">'</span>alive<span class="pl-pds">'</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>dead<span class="pl-pds">'</span></span>}];
+        <span class="pl-smi">res</span>.<span class="pl-c1">status</span>(<span class="pl-c1">200</span>).<span class="pl-c1">send</span>(s);
+    });
+});</pre></div>
+
+<p><img src="https://github.com/JordiCorbilla/Delphi-RaspberryPi/raw/master/Animation.gif" alt="Screenshot"></p>
+
+<div class="highlight highlight-source-pascal"><pre>## Delphi App <span class="pl-k">in</span> action
+<span class="pl-c">//Example - create list of nodes to scan:</span>
+  listNodes := TList&lt;TNode&gt;.create();
+  listNodes.Add(TNode.Create(<span class="pl-s"><span class="pl-pds">'</span>status/picontroller<span class="pl-pds">'</span></span>));
+  listNodes.Add(TNode.Create(<span class="pl-s"><span class="pl-pds">'</span>status/pi01<span class="pl-pds">'</span></span>));
+  listNodes.Add(TNode.Create(<span class="pl-s"><span class="pl-pds">'</span>status/pi02<span class="pl-pds">'</span></span>));
+  listNodes.Add(TNode.Create(<span class="pl-s"><span class="pl-pds">'</span>status/pi03<span class="pl-pds">'</span></span>));
+
+<span class="pl-c">//Use this list to loop through and request the correct node:</span>
+<span class="pl-k">procedure</span> <span class="pl-en">TNodeThread.Execute</span>;
+<span class="pl-k">var</span>
+  node : TNode;
+  jValue: TJSONValue;
+  LJsonArr   : TJSONArray;
+  LJsonValue : TJSONValue;
+  LItem : TJSONValue;
+  status : string;
+<span class="pl-k">begin</span>
+  Synchronize(
+    procedure ()
+    <span class="pl-k">begin</span>
+        FAniIndicator.Visible := true;
+        FAniIndicator.Enabled := true;
+    <span class="pl-k">end</span>
+  );
+
+  <span class="pl-k">for</span> node <span class="pl-k">in</span> FListNodes <span class="pl-k">do</span>
+  <span class="pl-k">begin</span>
+    FRequest.Resource := node.Action;
+    <span class="pl-k">try</span>
+      FRequest.Execute;
+      jValue := FResponse.JSONValue;
+      LJsonArr := TJSONObject.ParseJSONValue(TEncoding.ASCII.GetBytes(jValue.ToString),<span class="pl-c1">0</span>) <span class="pl-k">as</span> TJSONArray;
+      <span class="pl-c">//Process results</span>
+    <span class="pl-k">except</span>
+      on e : Exception <span class="pl-k">do</span>
+      <span class="pl-k">begin</span>
+        Synchronize(
+          procedure ()
+          <span class="pl-k">begin</span>
+              node.labelNode.Text := <span class="pl-s"><span class="pl-pds">'</span>Timeout<span class="pl-pds">'</span></span>;
+              node.RoundRect.Fill.Color := node.ColorOff;
+          <span class="pl-k">end</span>
+        );
+      <span class="pl-k">end</span>;
+    <span class="pl-k">end</span>;
+  <span class="pl-k">end</span>;
+
+  Synchronize(
+    procedure ()
+    <span class="pl-k">begin</span>
+        FAniIndicator.Visible := false;
+        FAniIndicator.Enabled := false;
+    <span class="pl-k">end</span>
+  );
+<span class="pl-k">end</span>;</pre></div>
+
+<p><img src="https://github.com/JordiCorbilla/Delphi-RaspberryPi/raw/master/Animation2.gif" alt="Screenshot"></p>
+
+<h2>
+<a id="licence" class="anchor" href="#licence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Licence</strong>
+</h2>
+
+<pre><code>The MIT License (MIT)
+
+Copyright (c) 2016 Jordi Corbilla
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/JordiCorbilla">JordiCorbilla</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
