@@ -105,6 +105,10 @@ end;
 
 ![Screenshot](https://github.com/JordiCorbilla/Delphi-RaspberryPi/raw/master/Animation2.gif)
 
+And the layout:
+
+![Screenshot](https://github.com/JordiCorbilla/Delphi-RaspberryPi/raw/master/layout.png)
+
 **Licence**
 -------
 
