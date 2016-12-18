@@ -860,7 +860,6 @@ object Form2: TForm2
     Size.Height = 241.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 9
-    BackgroundFill.Kind = None
     Bitmap.PNG = {
       89504E470D0A1A0A0000000D49484452000001EE00000172080600000033B339
       6E000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
@@ -1794,7 +1793,6 @@ object Form2: TForm2
       8C3107C2C1CD18638C390CE0FF014ACCA39BF6574F7A0000000049454E44AE42
       6082}
     BitmapScale = 0.600000023841857900
-    ShowScrollBars = False
     Viewport.Width = 377.000000000000000000
     Viewport.Height = 241.000000000000000000
   end
@@ -1804,12 +1802,12 @@ object Form2: TForm2
     Resource = 'status/picontroller'
     Response = RESTResponse1
     SynchronizedEvents = False
-    Left = 168
-    Top = 288
+    Left = 208
+    Top = 384
   end
   object RESTResponse1: TRESTResponse
-    Left = 168
-    Top = 232
+    Left = 120
+    Top = 384
   end
   object RESTClient1: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
@@ -1817,7 +1815,7 @@ object Form2: TForm2
     BaseURL = 'http://61184bba.ngrok.io'
     Params = <>
     HandleRedirects = True
-    Left = 168
-    Top = 176
+    Left = 40
+    Top = 384
   end
 end

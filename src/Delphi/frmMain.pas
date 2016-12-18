@@ -39,7 +39,6 @@ uses
 type
   TForm2 = class(TForm)
     Button1: TButton;
-    RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
     Label1: TLabel;
@@ -60,6 +59,8 @@ type
     FloatAnimation2: TFloatAnimation;
     ImageViewer1: TImageViewer;
     BitmapAnimation1: TBitmapAnimation;
+    RESTClient1: TRESTClient;
+    ImageViewer2: TImageViewer;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
