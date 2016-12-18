@@ -1,82 +1,11 @@
-inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
-  ClientHeight = 695
-  ClientWidth = 450
+inherited Form2_NmXhdpiPh: TForm2_NmXhdpiPh
+  ClientHeight = 615
   DesignerMasterStyle = 3
-  inherited RoundRect4: TRoundRect [0]
-    Position.X = 197.000000000000000000
-    Position.Y = 296.000000000000000000
+  inherited ImageViewer2: TImageViewer
+    Viewport.Width = 377.000000000000000000
+    Viewport.Height = 241.000000000000000000
   end
-  inherited RoundRect3: TRoundRect [1]
-    Position.X = 197.000000000000000000
-    Position.Y = 240.000000000000000000
-  end
-  inherited RoundRect2: TRoundRect [2]
-    Fill.Color = claChartreuse
-    Position.X = 197.000000000000000000
-    Position.Y = 184.000000000000000000
-  end
-  inherited Button1: TButton [3]
-    Size.Width = 345.000000000000000000
-  end
-  inherited Label1: TLabel [4]
-    Position.X = 28.000000000000000000
-    Position.Y = 142.000000000000000000
-  end
-  inherited AniIndicator1: TAniIndicator [5]
-    Position.X = 305.000000000000000000
-  end
-  inherited RoundRect1: TRoundRect [6]
-    Fill.Color = claCoral
-    Locked = True
-    Position.X = 197.000000000000000000
-    Position.Y = 128.000000000000000000
-    Stroke.Color = claWhite
-  end
-  inherited Label3: TLabel [7]
-    Position.X = 28.000000000000000000
-    Position.Y = 189.000000000000000000
-  end
-  inherited Label4: TLabel [8]
-    Position.X = 28.000000000000000000
-    Position.Y = 246.000000000000000000
-  end
-  inherited Label5: TLabel [9]
-    Position.X = 28.000000000000000000
-    Position.Y = 304.000000000000000000
-  end
-  inherited Label6: TLabel [10]
-    Position.X = 12.000000000000000000
-    Size.Width = 273.000000000000000000
-    Text = 'Status RPI Grid:'
-  end
-  inherited Label7: TLabel [11]
-    Position.X = 211.000000000000000000
-    Position.Y = 188.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 45.000000000000000000
-  end
-  inherited Label8: TLabel [12]
-    Position.X = 211.000000000000000000
-    Position.Y = 243.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 45.000000000000000000
-  end
-  inherited Label9: TLabel [13]
-    Position.X = 211.000000000000000000
-    Position.Y = 299.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 45.000000000000000000
-  end
-  inherited Label2: TLabel [14]
-    Position.X = 211.000000000000000000
-    Position.Y = 133.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 45.000000000000000000
-    StyleLookup = 'calendarlabelstyle'
-  end
-  inherited FloatAnimation1: TFloatAnimation [15]
-  end
-  inherited ImageViewer1: TImageViewer [16]
+  inherited ImageViewer1: TImageViewer
     Bitmap.PNG = {
       89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
       98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
@@ -150,18 +79,5 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
       FBBC7CA7AB03AF360000000049454E44AE426082}
     Viewport.Width = 50.000000000000000000
     Viewport.Height = 50.000000000000000000
-  end
-  inherited ImageViewer2: TImageViewer [17]
-    Viewport.Width = 377.000000000000000000
-    Viewport.Height = 241.000000000000000000
-  end
-  inherited RESTRequest1: TRESTRequest
-    Left = 156
-    Top = 400
-  end
-  inherited RESTResponse1: TRESTResponse
-    ContentType = 'text/html'
-    Left = 260
-    Top = 400
   end
 end

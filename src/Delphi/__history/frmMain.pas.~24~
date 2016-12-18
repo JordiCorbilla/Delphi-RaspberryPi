@@ -34,12 +34,11 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, IPPeerClient,
   REST.Client, Data.Bind.Components, Data.Bind.ObjectScope,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, FMX.Ani,
-  Generics.collections, lib.nodes;
+  Generics.collections, lib.nodes, FMX.Layouts, FMX.ExtCtrls;
 
 type
   TForm2 = class(TForm)
     Button1: TButton;
-    RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
     Label1: TLabel;
@@ -58,11 +57,16 @@ type
     RoundRect4: TRoundRect;
     FloatAnimation1: TFloatAnimation;
     FloatAnimation2: TFloatAnimation;
+    ImageViewer1: TImageViewer;
+    BitmapAnimation1: TBitmapAnimation;
+    RESTClient1: TRESTClient;
+    ImageViewer2: TImageViewer;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
+    procedure ThreadTerminated(Sender : TObject);
   public
     listNodes : TList<TNode>;
   end;
@@ -78,78 +82,15 @@ uses
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
 {$R *.LgXhdpiTb.fmx ANDROID}
+{$R *.NmXhdpiPh.fmx ANDROID}
 
 procedure TForm2.Button1Click(Sender: TObject);
 var
-  jValue:TJSONValue;
   nodeThread : TNodeThread;
 begin
   nodeThread := TNodeThread.Create(RESTRequest1, RESTResponse1, listNodes, AniIndicator1);
-  //nodeThread.OnTerminate := ThreadTerminated;
+  nodeThread.OnTerminate := ThreadTerminated;
   nodeThread.Start;
-
-
-//  AniIndicator1.Visible := true;
-//  AniIndicator1.Enabled := true;
-//  RESTRequest1.Resource := 'status/picontroller';
-//  RESTRequest1.Execute;
-//  jValue:=RESTResponse1.JSONValue;
-//  if jValue.ToString.Contains('alive') then
-//  begin
-//    Label2.Text := 'Alive';
-//    RoundRect1.Fill.Color := 4286578432;
-//    Application.ProcessMessages;
-//  end
-//  else
-//  begin
-//    Label2.Text := 'Dead';
-//    RoundRect1.Fill.Color := 4292613180;
-//  end;
-//
-//  RESTRequest1.Resource := 'status/pi01';
-//  RESTRequest1.Execute;
-//  jValue:=RESTResponse1.JSONValue;
-//  if jValue.ToString.Contains('alive') then
-//  begin
-//    Label7.Text := 'Alive';
-//    RoundRect2.Fill.Color := 4286578432;
-//  end
-//  else
-//  begin
-//    Label7.Text := 'Dead';
-//    RoundRect2.Fill.Color := 4292613180;
-//  end;
-//
-//  RESTRequest1.Resource := 'status/pi02';
-//  RESTRequest1.Execute;
-//  jValue:=RESTResponse1.JSONValue;
-//  if jValue.ToString.Contains('alive') then
-//  begin
-//    Label8.Text := 'Alive';
-//    RoundRect3.Fill.Color := 4286578432;
-//  end
-//  else
-//  begin
-//    Label8.Text := 'Dead';
-//    RoundRect3.Fill.Color := 4292613180;
-//  end;
-//
-//  RESTRequest1.Resource := 'status/pi03';
-//  RESTRequest1.Execute;
-//  jValue:=RESTResponse1.JSONValue;
-//  if jValue.ToString.Contains('alive') then
-//  begin
-//    Label9.Text := 'Alive';
-//    RoundRect4.Fill.Color := 4286578432;
-//  end
-//  else
-//  begin
-//    Label9.Text := 'Dead';
-//    RoundRect4.Fill.Color := 4292613180;
-//  end;
-//
-//  AniIndicator1.Enabled := false;
-//  AniIndicator1.Visible := false;
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);
@@ -160,18 +101,20 @@ begin
   listNodes.Add(TNode.Create('status/pi02', 4286578432, 4292613180, Label8, RoundRect3));
   listNodes.Add(TNode.Create('status/pi03', 4286578432, 4292613180, Label9, RoundRect4));
   RoundRect1.Fill.Color := 4292613180;
-  RoundRect1.Fill.Kind := TBrushKind.Solid;
   RoundRect2.Fill.Color := 4292613180;
-  RoundRect2.Fill.Kind := TBrushKind.Solid;
   RoundRect3.Fill.Color := 4292613180;
-  RoundRect3.Fill.Kind := TBrushKind.Solid;
   RoundRect4.Fill.Color := 4292613180;
-  RoundRect4.Fill.Kind := TBrushKind.Solid;
 end;
 
 procedure TForm2.FormDestroy(Sender: TObject);
 begin
   listNodes.free;
+end;
+
+procedure TForm2.ThreadTerminated(Sender: TObject);
+begin
+  AniIndicator1.Visible := false;
+  AniIndicator1.Enabled := false;
 end;
 
 end.

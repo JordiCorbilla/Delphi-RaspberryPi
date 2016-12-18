@@ -82,6 +82,7 @@ uses
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
 {$R *.LgXhdpiTb.fmx ANDROID}
+{$R *.NmXhdpiPh.fmx ANDROID}
 
 procedure TForm2.Button1Click(Sender: TObject);
 var
@@ -103,6 +104,7 @@ begin
   RoundRect2.Fill.Color := 4292613180;
   RoundRect3.Fill.Color := 4292613180;
   RoundRect4.Fill.Color := 4292613180;
+  Label6.Text := 'Status RPi 3 Grid:';
 end;
 
 procedure TForm2.FormDestroy(Sender: TObject);

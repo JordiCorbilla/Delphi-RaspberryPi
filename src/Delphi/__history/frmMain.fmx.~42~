@@ -998,7 +998,7 @@ object Form2: TForm2
     Position.X = 32.000000000000000000
     Position.Y = 134.000000000000000000
     Size.Width = 145.000000000000000000
-    Size.Height = 27.000000000000000000
+    Size.Height = 23.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Size = 22.000000000000000000
     Text = 'PiController'
@@ -1064,7 +1064,7 @@ object Form2: TForm2
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Size = 22.000000000000000000
-    Text = 'Status RPi 3 Grid:'
+    Text = 'Status RPI Grid'
   end
   object Label7: TLabel
     StyledSettings = [Family]
@@ -1124,7 +1124,7 @@ object Form2: TForm2
     StopValue = 0.000000000000000000
   end
   object ImageViewer1: TImageViewer
-    Position.X = 192.000000000000000000
+    Position.X = 184.000000000000000000
     Position.Y = 64.000000000000000000
     TabOrder = 4
     Bitmap.PNG = {
