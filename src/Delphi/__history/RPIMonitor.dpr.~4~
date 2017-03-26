@@ -32,14 +32,12 @@ uses
   FMX.Forms,
   frmMain in 'frmMain.pas' {Form2},
   lib.nodes in 'lib.nodes.pas',
-  lib.animation in 'lib.animation.pas',
-  frmOptions in 'frmOptions.pas' {Form3};
+  lib.animation in 'lib.animation.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TForm3, Form3);
   Application.Run;
 end.

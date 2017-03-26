@@ -25,21 +25,46 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-program RPIMonitor;
+unit Unit1;
+
+interface
 
 uses
-  System.StartUpCopy,
-  FMX.Forms,
-  frmMain in 'frmMain.pas' {Form2},
-  lib.nodes in 'lib.nodes.pas',
-  lib.animation in 'lib.animation.pas',
-  frmOptions in 'frmOptions.pas' {Form3};
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, IPPeerClient, Vcl.StdCtrls, REST.Client,
+  Data.Bind.Components, Data.Bind.ObjectScope;
 
-{$R *.res}
+type
+  TForm1 = class(TForm)
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
+    Button1: TButton;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
 
+var
+  Form1: TForm1;
+
+implementation
+
+uses
+  System.JSON;
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  jValue:TJSONValue;
 begin
-  Application.Initialize;
-  Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TForm3, Form3);
-  Application.Run;
+  RESTRequest1.Execute;
+  jValue:=RESTResponse1.JSONValue;
+  memo1.Text:= jValue.ToString;
+end;
+
 end.

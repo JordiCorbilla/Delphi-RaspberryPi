@@ -34,7 +34,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, IPPeerClient,
   REST.Client, Data.Bind.Components, Data.Bind.ObjectScope,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, FMX.Ani,
-  Generics.collections, lib.nodes, FMX.Layouts, FMX.ExtCtrls;
+  Generics.collections, lib.nodes, FMX.Layouts, FMX.ExtCtrls, frmOptions;
 
 type
   TForm2 = class(TForm)
@@ -61,9 +61,11 @@ type
     BitmapAnimation1: TBitmapAnimation;
     RESTClient1: TRESTClient;
     ImageViewer2: TImageViewer;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
     procedure ThreadTerminated(Sender : TObject);
@@ -91,6 +93,11 @@ begin
   nodeThread := TNodeThread.Create(RESTRequest1, RESTResponse1, listNodes, AniIndicator1);
   nodeThread.OnTerminate := ThreadTerminated;
   nodeThread.Start;
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+  Form3.ShowModal();
 end;
 
 procedure TForm2.FormCreate(Sender: TObject);
